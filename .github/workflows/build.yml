@@ -22,11 +22,6 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev libssl-dev openssl libffi-dev zlib1g-dev libsm6 libxext6 libxrender-dev ccache git python3-dev python3-pip openjdk-17-jdk zip unzip autoconf libtool pkg-config libncurses5-dev libncursesw5-dev libtinfo5 cmake gettext libssl-dev
 
-    - name: Accept Android SDK Licenses
-      run: |
-        mkdir -p ~/.android
-        touch ~/.android/repositories.cfg
-
     - name: Install Buildozer & Cython
       run: |
         pip install --upgrade pip setuptools
