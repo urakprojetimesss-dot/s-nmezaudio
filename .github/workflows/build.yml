@@ -27,13 +27,16 @@ jobs:
         mkdir -p ~/.android
         touch ~/.android/repositories.cfg
 
-    - name: Install Buildozer & Cython
+    - name: Install Buildozer & Cython Fix
       run: |
-        pip install --upgrade pip setuptools
-        pip install "cython==0.29.33"
-        pip install "buildozer==1.5.0"
+        python -m pip install --upgrade pip setuptools wheel
+        python -m pip install "cython==0.29.33"
+        python -m pip install "buildozer==1.5.0"
 
     - name: Build APK with Buildozer
+      env:
+        USE_SETUPTOOLS: "1"
+        CYTHON: "cython"
       run: |
         yes | buildozer -v android debug
 
