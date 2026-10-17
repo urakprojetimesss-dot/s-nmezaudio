@@ -9,7 +9,7 @@ source.exclude_exts = spec
 source.exclude_dirs = tests, bin, venv
 
 version = 0.1
-requirements = python3,kivy==2.2.1
+requirements = python3==3.10.11,kivy==2.2.1
 
 orientation = portrait
 fullscreen = 0
